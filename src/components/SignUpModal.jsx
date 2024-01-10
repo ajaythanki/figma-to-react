@@ -11,7 +11,7 @@ import GoogleIcon from "../assets/google-icon.svg";
 import FBIcon from "../assets/fb-icon.png";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { register } from "../redux/features/userSlice";
+import { register } from "../redux/features/user/userSlice";
 import { useDispatch } from "react-redux";
 const SignUpModal = (props) => {
   const [firstName, setFirstName] = useState("");
