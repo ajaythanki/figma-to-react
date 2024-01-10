@@ -1,11 +1,55 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --color-han-blue: #495DC6;
+  --color-royal-blue: #2F6CE5;
+  --color-keppel: #AD3C46;
+  --color-sea-green: #37C172;
+  --color-orange-yellow: #F4CA64;
+  --color-violet-blue: #7950F2;
+  --color-ultramarine-blue: #4C6FF5;
+  --color-brilliant-azure: #339AF0;
+  --color-ball-blue: #22B8CF;
+  --color-mountain-meadow: #21C997;
+  --color-emerald: #50CF66;
+  --color-yellow-green: #94D82C;
+  --color-deep-lemon: #FCC418;
+  --color-deep-saffron: #FF922B;
+  --color-orchid: #CB5DE8;
+  --color-light-crimson: #F06594;
+  --color-pastel-red: #FF6B6B;
+  --color-input-bg: #F2F2F2;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+}
+
+html {
+  font-family: "IBM Plex Sans", Helvetica;
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
+}
+
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}
+
+
+.searchform:focus-within {
+  border: 1px solid gray;
+}
+
+.signup-form {
+  border: 1px solid lightgray;
+  border-radius: 2px;
+}
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
