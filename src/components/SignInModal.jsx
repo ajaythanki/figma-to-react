@@ -9,7 +9,7 @@ import ShowPasswordIcon from "../assets/eye.png";
 import HidePasswordIcon from "../assets/eye-slash.png";
 import GoogleIcon from '../assets/google-icon.svg'
 import FBIcon from '../assets/fb-icon.png'
-import { authLogin } from '../redux/features/userSlice';
+import { authLogin } from '../redux/features/user/userSlice';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import toast from 'react-hot-toast';
