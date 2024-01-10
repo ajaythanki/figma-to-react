@@ -7,7 +7,7 @@ import { useState } from "react";
 
 const Layout = ({ children }) => {
   const [signUpModalShow, setSignupModalShow] = useState(false);
-  const [signinModalShow, setSigninModalShow] = useState(true);
+  const [signinModalShow, setSigninModalShow] = useState(false);
 
   return (
     <>
