@@ -1,25 +1,36 @@
-import { useState } from 'react'
-import Layout from './components/Layout'
+import { Col, Container, Row } from "react-bootstrap";
+import Hero from "./components/Hero";
+import Layout from "./components/Layout";
+import Filters from "./components/Filters";
+import BlogCards from "./components/BlogCards";
+import Sidebar from "./components/Sidebar";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
 
   return (
     <Layout>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Hero
+        title={"Computer Engineering"}
+        subTitle={"142,765 Computer Engineers follow this"}
+      />
+      <section className="d-flex">
+        <Container>
+          <Filters />
+          <Row>
+            <Col sm={8}>
+              <BlogCards />
+            </Col>
+            <Col
+              sm={4}
+              className="d-flex justify-content-end align-items-start"
+            >
+              <Sidebar />
+            </Col>
+          </Row>
+        </Container>
+      </section>
     </Layout>
-  )
-}
+  );
+};
 
-export default App
+export default App;
