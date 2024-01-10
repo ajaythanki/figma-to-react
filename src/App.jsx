@@ -2,7 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import Hero from "./components/Hero";
 import Layout from "./components/Layout";
 import Filters from "./components/Filters";
-import BlogCards from "./components/BlogCards";
+import PostCards from "./components/PostCards";
 import Sidebar from "./components/Sidebar";
 
 const App = () => {
@@ -18,7 +18,7 @@ const App = () => {
           <Filters />
           <Row>
             <Col sm={8}>
-              <BlogCards />
+              <PostCards />
             </Col>
             <Col
               sm={4}

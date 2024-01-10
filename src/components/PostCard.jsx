@@ -6,7 +6,7 @@ import BagIcon from "../assets/bag-icon.svg";
 import CalenderIcon from "../assets/calender-icon.svg";
 import LocationIcon from "../assets/location-icon.svg";
 
-const BlogCard = ({
+const PostCard = ({
   category,
   title,
   subtitle,
@@ -20,7 +20,7 @@ const BlogCard = ({
   buttonLabel,
 }) => {
   const categoryIcons = {
-    meetup: "🗓️",
+    event: "🗓️",
     education: "🔬️",
     article: "✍️",
     job: "💼️",
@@ -56,12 +56,12 @@ const BlogCard = ({
         {(category === "education" || category === "article") && (
           <Card.Subtitle>{subtitle}</Card.Subtitle>
         )}
-        {(category === "meetup" || category === "job") && (
+        {(category === "event" || category === "job") && (
           <>
             <div className="d-flex gap-5">
               <Card.Text>
-                <Image src={category === "meetup" ? CalenderIcon : BagIcon} />{" "}
-                {category === "meetup" ? date : companyName}
+                <Image src={category === "event" ? CalenderIcon : BagIcon} />{" "}
+                {category === "event" ? date : companyName}
               </Card.Text>
               <Card.Text>
                 <Image src={LocationIcon} /> {location}
@@ -70,7 +70,7 @@ const BlogCard = ({
             <Button
               variant="link"
               className="btn btn-light w-100 text-decoration-none fw-semibold border py-2 border-1"
-              style={{ color: category === "meetup" ? "#E56135" : "#02B875" }}
+              style={{ color: category === "event" ? "#E56135" : "#02B875" }}
               href={buttonURL}
             >
               {buttonLabel}
@@ -102,4 +102,4 @@ const BlogCard = ({
   );
 };
 
-export default BlogCard;
+export default PostCard;
