@@ -5,7 +5,7 @@ import searchIcon from '../assets/search-icon.svg'
 import UserCard from '../components/UserCard'
 import profileImage1 from "../assets/profile1.jpg";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from '../redux/features/userSlice';
+import { logout } from '../redux/features/user/userSlice';
 import { Button, Form, Image, Nav, NavDropdown } from 'react-bootstrap';
 
 const Header=({signUpModalShow, setSignupModalShow, signinModalShow,setSigninModalShow})=> {
