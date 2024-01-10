@@ -73,18 +73,173 @@ html {
 
 }
 
-  font-weight: 500;
-}
+.btn-signup,
+.btn-social-login {
+  color: #FFF;
+  text-align: center;
+  font-size: 14px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px;
 }
 
+.btn-social-login {
+  border-radius: 2px;
+  border: 0.6px solid #D9D9DB;
+  background: #FFF;
+  color: #000;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.btn-social-login img {
+  margin-right: 10px;
+}
+
+.signup-form .input-password {
+  display: flex;
+  align-items: center;
+  padding-right: 18px;
+  border: 1px solid lightgray;
+  background-color: #F7F8FA;
+  box-shadow: none;
+}
+
+.forgot-password-link {
+  color: #000;
+  text-decoration: none;
+  padding: 0;
+  margin: 24px auto 0;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: -0.096px;
+}
+
+#navbarScrollingDropdown {
+  color: var(--color-royal-blue);
+  font-weight: 700;
+}
+
+.hero-section {
+  position: relative;
+  height: 50vh;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.60) 100%), url("./assets/hero-banner.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.location-warning {
+  color: #000;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  opacity: 0.5;
+}
+
+.hero-title-wrapper {
+  padding-bottom: 80px;
   display: flex;
 }
 
+.hero-title {
+  color: #FFF;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
+.hero-sub-title {
+  color: #FFF;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.card-title {
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 134.167%;
+}
+
+.recommended-title {
+  color: #000;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.link-btn {
+  color: #2F6CE5;
+  text-align: right;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 60px;
+}
+
+.modal-title {
+  margin: 0 auto;
+  color: #008A45;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
   font-weight: 500;
-}
-}
+  line-height: 16px;
 }
 
+.modal-header {
+  background: #EFFFF4;
+  padding: 18px 0;
+  border: none;
+}
+
+.btn-close {
+  position: absolute;
+  top: -44px;
+  right: -14px;
+  padding: 8px;
+  background-color: white;
+  border-radius: 100%;
+}
+
+
+.signin-text {
+  color: #3D3D3D;
+  text-align: right;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.signin-text span {
+  color: #2F6CE5;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tnc {
+  color: #000;
+  text-align: center;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: -0.088px;
 }
