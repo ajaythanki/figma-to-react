@@ -1,16 +1,24 @@
 import { Toaster } from "react-hot-toast";
 import Header from "./Header";
 import { Container, NavLink } from "react-bootstrap";
+import SignUpModal from "./SignUpModal";
+import SignInModal from "./SignInModal";
+import { useState } from "react";
 
 const Layout = ({ children }) => {
+  const [signUpModalShow, setSignupModalShow] = useState(false);
+  const [signinModalShow, setSigninModalShow] = useState(true);
+
   return (
     <>
-      <Header />
+      <Header signUpModalShow={signUpModalShow} setSignupModalShow={setSignupModalShow} signinModalShow={signinModalShow} setSigninModalShow={setSigninModalShow} />
       <Toaster position="top-center" />
-      <Container
-      >
+      <main style={{marginTop:64}}>
         {children}
-      </Container>
+      </main>
+      <SignUpModal show={signUpModalShow} onHide={() => setSignupModalShow(false)} />
+      <SignInModal show={signinModalShow} onHide={() => setSigninModalShow(false)} />
+
       <Footer />
     </>
   );
