@@ -20,17 +20,18 @@ export default Layout;
 
 function Footer() {
   return (
-    <Container className="position-static bottom-0">
+    <Container className="position-static z-1 bottom-0 justify-content-center align-items-center py-5">
+
       <h6
-        className="text-secondary text-align-center"
+        className="d-flex text-secondary text-center justify-content-center"
       >
         {"Copyright © "}
         <NavLink
           href="https://github.com/ajaythanki/"
           target="_blank"
         >
-          Ajay Thanki
-        </NavLink>{" "}
+          Ajay Thanki&nbsp;{" "}
+        </NavLink>
         {new Date().getFullYear()}
         {"."}
       </h6>
