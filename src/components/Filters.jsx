@@ -1,4 +1,4 @@
-import { Col, Image, Row } from "react-bootstrap"
+import { Button, Col, Image, Row } from "react-bootstrap"
 import DropdownIcon from "../assets/dropdown-icon.svg";
 import addIcon from "../assets/add-icon.png";
 import exitIcon from "../assets/exit-icon.svg";
@@ -7,34 +7,38 @@ import { useSelector } from "react-redux";
 const Filters = () => {
   const user = useSelector(state=> state.user.currentUser)
 
+  const handleFilter = ()=>{
+    console.log("filter")
+  }
+
   return (
     <Row className="my-4 border-bottom">
       <Col sm={8}>
         <ul className="d-flex p-0 gap-3">
           <li className="p-0 list-unstyled">
-            <a href="" className="text-decoration-none text-black">
+            <Button variant="button" onClick={()=>handleFilter("all")} className="text-decoration-none text-black">
               All Posts(32)
-            </a>
+            </Button>
           </li>
           <li className="p-0 list-unstyled">
-            <a href="" className="text-decoration-none text-black">
+            <Button variant="button" onClick={()=>handleFilter("article")} className="text-decoration-none text-black">
               Article
-            </a>
+            </Button>
           </li>
           <li className="p-0 list-unstyled">
-            <a href="" className="text-decoration-none text-black">
+            <Button variant="button" onClick={()=>handleFilter("event")} className="text-decoration-none text-black">
               Event
-            </a>
+            </Button>
           </li>
           <li className="p-0 list-unstyled">
-            <a href="" className="text-decoration-none text-black">
+            <Button variant="button" onClick={()=>handleFilter("education")} className="text-decoration-none text-black">
               Education
-            </a>
+            </Button>
           </li>
           <li className="p-0 list-unstyled">
-            <a href="" className="text-decoration-none text-black">
+            <Button variant="button" onClick={()=>handleFilter("job")} className="text-decoration-none text-black">
               Job
-            </a>
+            </Button>
           </li>
         </ul>
       </Col>
