@@ -1,30 +1,30 @@
-import {CloseButton, Form, Image, NavLink } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
-import Modal from 'react-bootstrap/Modal';
-import Row from 'react-bootstrap/Row';
-import SignupIllustration from '../assets/signup-illustration.png'
+import { CloseButton, Form, Image } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Modal from "react-bootstrap/Modal";
+import Row from "react-bootstrap/Row";
+import SignupIllustration from "../assets/signup-illustration.png";
 import ShowPasswordIcon from "../assets/eye.png";
 import HidePasswordIcon from "../assets/eye-slash.png";
-import GoogleIcon from '../assets/google-icon.svg'
-import FBIcon from '../assets/fb-icon.png'
-import { authLogin } from '../redux/features/user/userSlice';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import toast from 'react-hot-toast';
+import GoogleIcon from "../assets/google-icon.svg";
+import FBIcon from "../assets/fb-icon.png";
+import { authLogin } from "../redux/features/user/userSlice";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import toast from "react-hot-toast";
 const SignInModal = (props) => {
   const [email, setEmail] = useState("");
-const [password, setPassword] = useState("");
-const [showPassword, setShowPassword] = useState(false);
-const dispatch=useDispatch()
-  const handleSignin = (e)=>{
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const dispatch = useDispatch();
+  const handleSignin = (e) => {
     e.preventDefault();
 
-    toast.loading('Signing In...', {id:"signin"})
+    toast.loading("Signing In...", { id: "signin" });
     dispatch(authLogin(email, password));
     props.onHide();
-  }
+  };
   return (
     <Modal
       {...props}
@@ -43,7 +43,7 @@ const dispatch=useDispatch()
         <Modal.Body>
           <Container>
             <Row>
-              <Col sm={6}>
+              <Col sm={12} lg={6}>
                 <Row>
                   <h2>Sign In</h2>
                 </Row>
@@ -81,6 +81,7 @@ const dispatch=useDispatch()
                         </div>
                       </Col>
                     </Row>
+                  </div>
                     <Row>
                       <Col>
                         <Button
@@ -94,7 +95,6 @@ const dispatch=useDispatch()
                         </Button>
                       </Col>
                     </Row>
-                  </div>
                 </Form>
                 <Row>
                   <Col>
@@ -122,13 +122,14 @@ const dispatch=useDispatch()
                   </Col>
                 </Row>
               </Col>
-              <Col xs={6}>
+              <Col sm={12} xs={6} lg={6} className="g-3">
                 <Row>
                   <p className="signin-text">
-                    Don’t have an account yet? <span>Create new for free!</span>
+                    Don’t have an account yet?{" "}
+                    <span onClick={props.onHide}>Create new for free!</span>
                   </p>
                 </Row>
-                <Row className="flex-column justify-content-between">
+                <Row className="d-none d-lg-flex flex-column justify-content-between">
                   <Image
                     src={SignupIllustration}
                     className="d-block me-auto ms-auto"

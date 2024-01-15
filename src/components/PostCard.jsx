@@ -18,6 +18,7 @@ const PostCard = ({
   companyName,
   buttonURL,
   buttonLabel,
+  eventName
 }) => {
   const categoryIcons = {
     event: "🗓️",
@@ -28,8 +29,8 @@ const PostCard = ({
 
   return (
     <Card className="p-0">
-        {category !== "job" && (
-      <Card.Header className="p-0" style={{ height: 220 }}>
+      {category !== "job" && (
+        <Card.Header className="p-0" style={{ height: 220 }}>
           <Card.Img
             src={imgURL}
             style={{
@@ -37,11 +38,11 @@ const PostCard = ({
               objectFit: "cover",
             }}
           />
-      </Card.Header>
-        )}
+        </Card.Header>
+      )}
       <Card.Body>
         <Card.Text className="text-capitalize">
-          {categoryIcons[category]} {category}
+          {eventName ? eventName : categoryIcons[category] + " " + category}
         </Card.Text>
         <div className="d-flex justify-content-between">
           <Card.Title tag="h5">{title}</Card.Title>

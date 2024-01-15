@@ -14,10 +14,10 @@ const RecommendedUsers = () => {
           Recommended Groups
         </h2>
         <Col>
-          <UserCard profileImage={profileImage2} title={'Leisure'}/>
-          <UserCard profileImage={profileImage3} title={'Activism'}/>
-          <UserCard profileImage={profileImage4} title={'MBA'}/>
-          <UserCard profileImage={profileImage5} title={'Philosophy'}/>
+          <UserCard profileImage={profileImage2} title={'Leisure'} buttonLabel={'Followed'}/>
+          <UserCard profileImage={profileImage3} title={'Activism'} buttonLabel={'Follow'}/>
+          <UserCard profileImage={profileImage4} title={'MBA'} buttonLabel={'Follow'}/>
+          <UserCard profileImage={profileImage5} title={'Philosophy'} buttonLabel={'Follow'}/>
 
           <NavLink className='link-btn'>See More...</NavLink>
 

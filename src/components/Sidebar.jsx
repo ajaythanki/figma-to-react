@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 const Sidebar = () => {
   const user = useSelector(state=> state.user.currentUser)
   return (
-    <Row className="gap-5 justify-content-end w-75">
+    <Row className="gap-5 justify-content-end w-100">
       <Form
         className="d-flex"
         style={{

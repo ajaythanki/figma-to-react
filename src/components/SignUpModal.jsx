@@ -31,7 +31,7 @@ const SignUpModal = (props) => {
         id: "signup",
       });
     }
-    dispatch(register({firstName, lastName, email, password}))
+    dispatch(register({ firstName, lastName, email, password }));
     toast.success("Signed up Successfully...", { id: "signup" });
     props.onHide();
   };
@@ -53,14 +53,14 @@ const SignUpModal = (props) => {
         <Modal.Body>
           <Container>
             <Row>
-              <Col sm={6}>
+              <Col sm={12} lg={6}>
                 <Row>
                   <h2>Create Account</h2>
                 </Row>
                 <Form onSubmit={handleSignup}>
                   <div className="signup-form">
                     <Row className="gap-0">
-                      <Col sm={6} className="pe-0">
+                      <Col sm={12} md={6} className="pe-md-0">
                         <Form.Control
                           type="text"
                           name="firstName"
@@ -72,7 +72,7 @@ const SignUpModal = (props) => {
                           }}
                         />
                       </Col>
-                      <Col sm={6} className="ps-0">
+                      <Col sm={12} md={6} className="ps-md-0">
                         <Form.Control
                           type="text"
                           name="lastName"
@@ -171,13 +171,13 @@ const SignUpModal = (props) => {
                   </Col>
                 </Row>
               </Col>
-              <Col xs={6}>
+              <Col sm={12} xs={6} lg={6} className="g-3">
                 <Row>
                   <p className="signin-text">
                     Already have an account? <span>Sign In</span>
                   </p>
                 </Row>
-                <Row className="flex-column justify-content-between">
+                <Row className="d-none d-lg-flex flex-column justify-content-between">
                   <Image
                     src={SignupIllustration}
                     className="d-block me-auto ms-auto"

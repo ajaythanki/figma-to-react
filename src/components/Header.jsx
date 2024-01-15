@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout } from '../redux/features/user/userSlice';
 import { Button, Form, Image, Nav, NavDropdown } from 'react-bootstrap';
 
-const Header=({signUpModalShow, setSignupModalShow, signinModalShow,setSigninModalShow})=> {
+const Header=({setSignupModalShow, setSigninModalShow})=> {
 
   const handleShowModal=(modal)=>{
     if (modal === "signup") {
@@ -23,12 +23,14 @@ const Header=({signUpModalShow, setSignupModalShow, signinModalShow,setSigninMod
   const dispatch = useDispatch()
   console.log(user);
   return (
-    <Navbar expand="lg" fixed='top' bg='white'>
+    <Navbar expand="lg" fixed="top" bg="white">
       <Container fluid>
-        <Navbar.Brand href="/"><Image src={logo}/></Navbar.Brand>
+        <Navbar.Brand href="/">
+          <Image src={logo} />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
-          <Form className="d-flex me-auto ms-auto rounded-pill bg-body-tertiary searchform">
+          <Form className="d-flex my-3 me-md-auto ms-md-auto rounded-pill bg-body-tertiary searchform">
             <Button variant="btn">
               <Image src={searchIcon} />
             </Button>
@@ -41,32 +43,61 @@ const Header=({signUpModalShow, setSignupModalShow, signinModalShow,setSigninMod
               aria-label="Search"
             />
           </Form>
-          <Nav
-            className="my-2 my-lg-0"
-            style={{ maxHeight: "100px" }}
-            navbarScroll
-          >
-            {user &&
-            <>
-              <Navbar.Text className="d-flex align-items-center">
-                <UserCard profileImage={profileImage1} />
-                <NavDropdown title={user.firstName +' '+ user.lastName} id="navbarScrollingDropdown">
-                  <NavDropdown.Item onClick={()=>dispatch(logout())}>Log out</NavDropdown.Item>
-                </NavDropdown>
+          <div className="d-none d-lg-block">
+            <Nav
+              className="my-2 my-lg-0 hei"
+              style={{ maxHeight: "100px" }}
+              navbarScroll
+            >
+              {user && (
+                <>
+                  <Navbar.Text className="d-md-flex align-items-center">
+                    <UserCard profileImage={profileImage1} />
+                    <NavDropdown
+                      title={user.firstName + " " + user.lastName}
+                      id="navbarScrollingDropdown"
+                    >
+                      <NavDropdown.Item onClick={() => dispatch(logout())}>
+                        Log out
+                      </NavDropdown.Item>
+                    </NavDropdown>
+                  </Navbar.Text>
+                </>
+              )}
+              {!user && (
+                <Navbar.Text className="d-md-flex align-items-center">
+                  Create account.
+                  <NavDropdown title="It’s free" id="navbarScrollingDropdown">
+                    <NavDropdown.Item onClick={() => handleShowModal("signup")}>
+                      Signup
+                    </NavDropdown.Item>
+                    <NavDropdown.Item onClick={() => handleShowModal("signin")}>
+                      Login
+                    </NavDropdown.Item>
+                  </NavDropdown>
+                </Navbar.Text>
+              )}
+            </Nav>
+          </div>
+          {/* Mobile Menu */}
+          <div className="d-lg-none">
+            {user && (
+                
+                    <Button variant='button' className='w-100 btn-light' onClick={() => dispatch(logout())}>
+                      Log out
+                    </Button>
+            )}
+            {!user && (
+              <Navbar.Text className="d-flex flex-column align-items-center gap-2">
+                <Button variant='button' className='w-100 btn-light' onClick={() => handleShowModal("signup")}>
+                  Signup
+                </Button>
+                <Button variant='button' className='w-100 btn-light' onClick={() => handleShowModal("signin")}>
+                  Login
+                </Button>
               </Navbar.Text>
-            </>
-
-            }
-            {!user &&
-            <Navbar.Text className="d-flex align-items-center">
-              Create account.
-              <NavDropdown title="It’s free" id="navbarScrollingDropdown">
-                <NavDropdown.Item onClick={()=>handleShowModal('signup')}>Signup</NavDropdown.Item>
-                <NavDropdown.Item onClick={()=>handleShowModal('signin')}>Login</NavDropdown.Item>
-              </NavDropdown>
-            </Navbar.Text>
-            }
-          </Nav>
+            )}
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>

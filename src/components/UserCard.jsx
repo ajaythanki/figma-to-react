@@ -1,6 +1,6 @@
 import { Image } from "react-bootstrap"
 
-const UserCard = ({profileImage, title, button}) => {
+const UserCard = ({profileImage, title, buttonLabel}) => {
   return (
     <div className="d-flex justify-content-between my-3">
       <div className="auther-wrapper d-flex align-items-center gap-3">
@@ -12,10 +12,15 @@ const UserCard = ({profileImage, title, button}) => {
         />
         <p className="mb-0">{title}</p>
       </div>
-      {button && 
-      <button className="btn btn-light rounded-pill" >Follow</button>
-      // <button className="btn btn-dark rounded-pill" >Followed</button>
-      }
+      {buttonLabel && (
+        <button
+          className={`btn ${
+            buttonLabel === "Follow" ? "btn-light" : "btn-dark"
+          } rounded-pill`}
+        >
+          {buttonLabel}
+        </button>
+      )}
     </div>
   );
 }
