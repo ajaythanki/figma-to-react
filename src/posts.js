@@ -30,7 +30,8 @@ export const posts = [
   },
   {
     id: "3",
-    category: "meetup",
+    category: "event",
+    eventName: "meetup",
     title: "Finance & Investment Elite Social Mixer @Lujiazui",
     subtitle:
       "I’ve worked in UX for the better part of a decade. From now on, I plan to rei…",
