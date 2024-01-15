@@ -4,11 +4,11 @@ import addIcon from "../assets/add-icon.png";
 import exitIcon from "../assets/exit-icon.svg";
 import { useSelector } from "react-redux";
 
-const Filters = () => {
+const Filters = ({setFilter, totalPosts}) => {
   const user = useSelector(state=> state.user.currentUser)
 
-  const handleFilter = ()=>{
-    console.log("filter")
+  const handleFilter = (category) => {
+    setFilter(category);
   }
 
   return (
@@ -17,7 +17,7 @@ const Filters = () => {
         <ul className="d-flex p-0 gap-3">
           <li className="p-0 list-unstyled">
             <Button variant="button" onClick={()=>handleFilter("all")} className="text-decoration-none text-black">
-              All Posts(32)
+              All Posts({totalPosts})
             </Button>
           </li>
           <li className="p-0 list-unstyled">
@@ -42,18 +42,18 @@ const Filters = () => {
           </li>
         </ul>
       </Col>
-      <Col sm={4} className="d-flex justify-content-end">
-        <button className="btn btn-light">
+      <Col sm={4} className="text-end">
+        <Button variant="button" className="btn btn-light me-3">
           Write a Post <Image src={DropdownIcon} />
-        </button>
+        </Button>
         {user ? (
-          <button className="btn btn-light bg-white border border-1">
+          <Button variant="button" className="btn btn-light bg-white border border-1">
             <Image src={exitIcon} /> Leave Group
-          </button>
+          </Button>
         ) : (
-          <button className="btn btn-primary">
+          <Button variant="button" className="btn btn-primary">
             <Image src={addIcon} /> Join Group
-          </button>
+          </Button>
         )}
       </Col>
     </Row>
