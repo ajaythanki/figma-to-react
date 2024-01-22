@@ -39,7 +39,6 @@ const Header=({setSignupModalShow, setSigninModalShow})=> {
               name="search"
               placeholder="Search for your favorite groups in ATG"
               className="me-2 border-0 bg-transparent shadow-none"
-              style={{ width: 360 }}
               aria-label="Search"
             />
           </Form>
@@ -88,11 +87,11 @@ const Header=({setSignupModalShow, setSigninModalShow})=> {
                     </Button>
             )}
             {!user && (
-              <Navbar.Text className="d-flex flex-column align-items-center gap-2">
-                <Button variant='button' className='w-100 btn-light' onClick={() => handleShowModal("signup")}>
+              <Navbar.Text className="d-flex overflow-scroll flex-column justify-content-center w-100 align-items-center gap-2 px-3">
+                <Button variant='button' className='w-100 px-0 btn-light' onClick={() => handleShowModal("signup")}>
                   Signup
                 </Button>
-                <Button variant='button' className='w-100 btn-light' onClick={() => handleShowModal("signin")}>
+                <Button variant='button' className='w-100 px-0 btn-light' onClick={() => handleShowModal("signin")}>
                   Login
                 </Button>
               </Navbar.Text>

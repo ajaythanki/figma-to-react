@@ -14,7 +14,7 @@ const Filters = ({setFilter, totalPosts}) => {
   return (
     <Row className="my-4 border-bottom">
       <Col sm={8}>
-        <ul className="d-flex p-0 gap-3">
+        <ul className="d-flex flex-wrap p-0 gap-3">
           <li className="p-0 list-unstyled">
             <Button variant="button" onClick={()=>handleFilter("all")} className="text-decoration-none text-black">
               All Posts({totalPosts})
